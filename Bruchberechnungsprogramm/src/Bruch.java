@@ -1,4 +1,5 @@
 import java.text.*;
+
 /**
  * Programm zur Erzeugung von Brüchen und zur Durchführung von Rechenoperationen
  * 
@@ -14,8 +15,7 @@ public class Bruch {
 	private long zaehler;
 	private long nenner;
 	private long ganzeZahl;
-	
-	
+
 	/**
 	 * Default Konstruktor
 	 * 
@@ -29,6 +29,7 @@ public class Bruch {
 	 * Konstruktor zur Erzeugung eines Bruch aus einer ganzen Zahl
 	 * 
 	 * @param g
+	 *            die Zahl die vor dem Bruch steht
 	 */
 	public Bruch(long g) {
 		this.zaehler = g;
@@ -39,13 +40,15 @@ public class Bruch {
 	 * Konstruktor zur Erzeugung eines echten Bruch
 	 * 
 	 * @param z
+	 *            die Zahl die oberhalb des Bruches steht
 	 * @param n
+	 *            die Zahl die unterhalb des Bruch steht
 	 */
 	public Bruch(long z, long n) {
 		this.zaehler = z;
 		this.nenner = n;
-		if (n == 0){
-			System.err.println("NICHT ZULÄSSIG!"); //EXCeption einbauen!
+		if (n == 0) {
+			System.err.println("NICHT ZULÄSSIG!"); // Exception einbauen!
 		}
 	}
 
@@ -53,33 +56,41 @@ public class Bruch {
 	 * Konstruktor zur Erzeugung eines echten Bruches mit ganzer Zahl
 	 * 
 	 * @param g
+	 *            die Zahl die vor dem Bruch steht
 	 * @param z
+	 *            die Zahl die oberhalb des Bruches steht
 	 * @param n
+	 *            die Zahl die unterhalb des Bruch steht
 	 */
 	public Bruch(long g, long z, long n) {
 		this.zaehler = z;
 		this.nenner = n;
 		this.ganzeZahl = g;
-		if (n == 0){
-			System.err.println("NICHT ZULÄSSIG!"); //EXCeption einbauen!
+		if (n == 0) {
+			System.err.println("NICHT ZULÄSSIG!"); // EXCeption einbauen!
 		}
 	}
+
 	/**
 	 * Methode zum erhalten von double Werten mit zwei Nachkommastellen
+	 * 
 	 * @param d
 	 * @return gerundeter double Wert
 	 */
-	public static double roundS (double d){
-		return Math.rint(d*100)/100.;
+	public static double roundS(double d) {
+		return Math.rint(d * 100) / 100.;
 	}
 
 	/**
 	 * Methode um Brüche zu addieren
 	 * 
 	 * @param zaehler
+	 *            die Zahl die oberhalb des Bruches steht
 	 * @param nenner
+	 *            die Zahl die unterhalb des Bruch steht
 	 * @param ganzeZahl
-	 * @return addierter Bruch
+	 *            die Zahl die vor dem Bruch steht
+	 * @return Ergebnis der Addition
 	 */
 	public Bruch addiere(Bruch bruch) {
 		long zaehler = 0;
@@ -109,8 +120,8 @@ public class Bruch {
 	/**
 	 * Methode um Brüche zu subtrahieren
 	 * 
-	 * @param
-	 * @return
+	 * @param bruch
+	 * @return Ergebnis der Subtraktion
 	 */
 	Bruch subtrahiere(Bruch bruch) {
 		long zaehler = 0;
@@ -125,7 +136,7 @@ public class Bruch {
 					- (this.nenner * bruch.zaehler);
 			ganzeZahl = this.ganzeZahl + bruch.ganzeZahl;
 		}
-		
+
 		if (new Bruch(ganzeZahl, zaehler, nenner).isEcht()) {
 			return new Bruch(ganzeZahl, zaehler, nenner).kuerzen(this);
 		} else {
@@ -137,8 +148,8 @@ public class Bruch {
 	/**
 	 * Methode um Brüche zu multiplizieren
 	 * 
-	 * @param
-	 * @return
+	 * @param bruch
+	 * @return Ergebnis der Muliplikation
 	 */
 	Bruch multipliziere(Bruch bruch) {
 		long zaehler = 0;
@@ -157,9 +168,9 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode um den Kerhwert zu ermitteln. Zähler und Nenner werden vertauscht
+	 * Methode um den Kerhwert zu ermitteln.
 	 * 
-	 * @return Den Kehrwert des Bruchs. Nenner und Zähler wurden vertauscht.
+	 * @return Den Kehrwert des Bruchs. Zähler und Nenner wurden vertauscht
 	 */
 	Bruch kehrwert() {
 		long zaehler = 0;
@@ -191,9 +202,9 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode zur Übrprüfung, ob der eingegeben Bruch ein echter Bruch ist
+	 * Methode zur Übrprüfung, ob der eingegebene Bruch ein echter Bruch ist
 	 * 
-	 * @return ganzeZahl, zähler und nenner
+	 * @return echter Bruch (ganzeZahl, zähler und nenner)
 	 */
 	Bruch echterBruch() {
 		long zaehler = 0;
@@ -213,9 +224,9 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode zur Überprufung, ob der eingegeben Bruch ein unechter Bruch ist
+	 * Methode zur Überprufung, ob der eingegebene Bruch ein unechter Bruch ist
 	 * 
-	 * @return zaehler und nenner
+	 * @return unechter Bruch (zaehler und nenner)
 	 */
 	Bruch unechterBruch() {
 		long zaehler = 0;
@@ -231,7 +242,7 @@ public class Bruch {
 	 * Methode um Brüche zu dividieren
 	 * 
 	 * @param bruch
-	 * @return
+	 * @return Ergebnis der Divisioon
 	 */
 	Bruch dividieren(Bruch bruch) {
 		long zaehler = 0;
@@ -247,7 +258,7 @@ public class Bruch {
 	 * Methode um Brüche zu potenzieren
 	 * 
 	 * @param potenz
-	 * @return
+	 * @return Ergebnis der Potenzierung
 	 */
 	Bruch potenzieren(long potenz) {
 		long zaehler = 0;
@@ -259,6 +270,11 @@ public class Bruch {
 		return new Bruch(zaehler, nenner).kuerzen(this);
 	}
 
+	/**
+	 * Methode zur Überprüfung, ob ein echter Bruch vorhanden ist
+	 * 
+	 * @return gibt einen Boolean Wert zurück, ob der Bruch echt oder unecht ist
+	 */
 	protected boolean isEcht() {
 		if (this.zaehler > this.nenner) {
 			return false;
@@ -270,17 +286,15 @@ public class Bruch {
 	/**
 	 * Methode um Brüche in Dezimalzahlen umzuwandeln
 	 * 
-	 * @return dezimalzahl
+	 * @return liefert den Bruch als Dezimalzahl zurück
 	 */
 	protected double getDezimalzahl() {
-		if(this.ganzeZahl == 0){
-			return roundS((double)this.zaehler/this.nenner);	
-		}else{
-			return this.ganzeZahl + roundS((double)this.zaehler/this.nenner);
+		if (this.ganzeZahl == 0) {
+			return roundS((double) this.zaehler / this.nenner);
+		} else {
+			return this.ganzeZahl + roundS((double) this.zaehler / this.nenner);
 		}
-		
-		
-		
+
 	}
 
 	protected long getGanzeZahl() {
