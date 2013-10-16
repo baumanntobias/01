@@ -43,7 +43,7 @@ public class BruchTest {
 		Assert.assertEquals("FEHLER", result5, bruchadd7.addiere(bruchadd8));
 		// ganzeZahl echte + ganzeZahl echte (selbe bruch)
 		Assert.assertEquals("FEHLER", result6, bruchadd6.addiere(bruchadd6));
-		// ganzeZahl echte + ganzeZahl echte (verschiedene brüche)
+		// ganzeZahl echte + ganzeZahl echte (verschiedene brï¿½che)
 		Assert.assertEquals("FEHLER", result8, bruchadd8.addiere(bruchadd9));
 		// ganzeZahl unechter + echte (verschiedene nenner)
 		Assert.assertEquals("FEHLER", result9, bruchadd1.addiere(bruchadd10));
@@ -110,7 +110,7 @@ public class BruchTest {
 //		Assert.assertEquals("FEHLER", result5, bruchadd7.addiere(bruchadd8));
 //		// ganzeZahl echte + ganzeZahl echte (selbe bruch)
 //		Assert.assertEquals("FEHLER", result6, bruchadd6.addiere(bruchadd6));
-//		// ganzeZahl echte + ganzeZahl echte (verschiedene brüche)
+//		// ganzeZahl echte + ganzeZahl echte (verschiedene brï¿½che)
 //		Assert.assertEquals("FEHLER", result8, bruchadd8.addiere(bruchadd9));
 //		// ganzeZahl unechter + echte (verschiedene nenner)
 //		Assert.assertEquals("FEHLER", result9, bruchadd1.addiere(bruchadd10));
@@ -146,7 +146,7 @@ public class BruchTest {
 		Assert.assertEquals("FEHLER", result5, bruchadd7.multipliziere(bruchadd8));
 		// ganzeZahl echte + ganzeZahl echte (selbe bruch)
 		Assert.assertEquals("FEHLER", result6, bruchadd6.multipliziere(bruchadd6));
-		// ganzeZahl echte + ganzeZahl echte (verschiedene brüche)
+		// ganzeZahl echte + ganzeZahl echte (verschiedene brï¿½che)
 		Assert.assertEquals("FEHLER", result8, bruchadd8.multipliziere(bruchadd9));
 //		// ganzeZahl unechter + echte (verschiedene nenner)
 //		Assert.assertEquals("FEHLER", result9, bruchadd1.addiere(bruchadd10));
@@ -168,6 +168,16 @@ public class BruchTest {
 
 	@Test
 	public void testPotenzieren() {
+	Bruch result1 = new Bruch(1, 1);
+		Bruch result2 = new Bruch(2, 3);
+		Bruch result3 = new Bruch(4, 9);
+		Bruch result4 = new Bruch(8, 27);
+		
+		Bruch bruchadd = new Bruch(2, 3);
+		Assert.assertEquals("Fehler", result1.toString(), bruchadd.potenzieren(0).toString());
+		Assert.assertEquals("Fehler", result2.toString(), bruchadd.potenzieren(1).toString());
+		Assert.assertEquals("Fehler", result3.toString(), bruchadd.potenzieren(2).toString());
+		Assert.assertEquals("Fehler", result4.toString(), bruchadd.potenzieren(3).toString());
 		// fail("Not yet implemented");
 	}
 
