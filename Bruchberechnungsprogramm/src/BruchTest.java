@@ -35,7 +35,7 @@ public class BruchTest {
 		Assert.assertEquals("FEHLER", result, bruchadd1.addiere(bruchadd2));
 		// echte + echte, mit gleichem Nenner
 		Assert.assertEquals("FEHLER", result2, bruchadd3.addiere(bruchadd3));
-		//
+		// test
 		Assert.assertEquals("FEHLER", result3, bruchadd4.addiere(bruchadd5));
 		// echte + ganzeZahl und echte
 		Assert.assertEquals("FEHLER", result4, bruchadd1.addiere(bruchadd6));

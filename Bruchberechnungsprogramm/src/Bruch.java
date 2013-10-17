@@ -296,19 +296,34 @@ public class Bruch {
 		}
 
 	}
-
+	
+	/**
+	 * 
+	 * @return
+	 */
 	protected long getGanzeZahl() {
 		return ganzeZahl;
 	}
-
+	
+	/**
+	 * 
+	 * @return
+	 */
 	protected long getNenner() {
 		return nenner;
 	}
-
+	
+	/**
+	 * 
+	 * @return
+	 */
 	protected long getZaehler() {
 		return zaehler;
 	}
 
+	/**
+	 * 
+	 */
 	public boolean equals(Object other) {
 		if (this == other)
 			return true;
@@ -326,6 +341,9 @@ public class Bruch {
 		return false;
 	}
 
+	/**
+	 * 
+	 */
 	public String toString() {
 		if (this.nenner == 1) {
 			return this.zaehler + "";
