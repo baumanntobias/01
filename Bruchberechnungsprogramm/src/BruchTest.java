@@ -32,8 +32,9 @@ public class BruchTest {
 		Bruch result12 = new Bruch(6, 1, 3);
 		Bruch result13 = new Bruch(9, 1, 3);
 		// echte + echte
+		// Änderung
 		Assert.assertEquals("FEHLER", result, bruchadd1.addiere(bruchadd2));
-		// echte + echte, mit gleichem Nenner
+		// echte + echte, mit gleichem Nenner 
 		Assert.assertEquals("FEHLER", result2, bruchadd3.addiere(bruchadd3));
 		// test
 		Assert.assertEquals("FEHLER", result3, bruchadd4.addiere(bruchadd5));
