@@ -1,7 +1,7 @@
 import java.text.*;
 
 /**
- * Programm zur Erzeugung von Brüchen und zur Durchführung von Rechenoperationen
+ * Programm zur Erzeugung von Brï¿½chen und zur Durchfï¿½hrung von Rechenoperationen
  * 
  * @author Patric Auer
  * @author Tobias Baumann
@@ -48,7 +48,7 @@ public class Bruch {
 		this.zaehler = z;
 		this.nenner = n;
 		if (n == 0) {
-			System.err.println("NICHT ZULÄSSIG!"); // Exception einbauen!
+			System.err.println("NICHT ZULï¿½SSIG!"); // Exception einbauen!
 		}
 	}
 
@@ -67,7 +67,7 @@ public class Bruch {
 		this.nenner = n;
 		this.ganzeZahl = g;
 		if (n == 0) {
-			System.err.println("NICHT ZULÄSSIG!"); // EXCeption einbauen!
+			System.err.println("NICHT ZULï¿½SSIG!"); // EXCeption einbauen!
 		}
 	}
 
@@ -82,7 +82,7 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode um Brüche zu addieren
+	 * Methode um Brï¿½che zu addieren
 	 * 
 	 * @param zaehler
 	 *            die Zahl die oberhalb des Bruches steht
@@ -118,7 +118,7 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode um Brüche zu subtrahieren
+	 * Methode um Brï¿½che zu subtrahieren
 	 * 
 	 * @param bruch
 	 * @return Ergebnis der Subtraktion
@@ -146,7 +146,7 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode um Brüche zu multiplizieren
+	 * Methode um Brï¿½che zu multiplizieren
 	 * 
 	 * @param bruch
 	 * @return Ergebnis der Muliplikation
@@ -170,7 +170,7 @@ public class Bruch {
 	/**
 	 * Methode um den Kerhwert zu ermitteln.
 	 * 
-	 * @return Den Kehrwert des Bruchs. Zähler und Nenner wurden vertauscht
+	 * @return Den Kehrwert des Bruchs. Zï¿½hler und Nenner wurden vertauscht
 	 */
 	Bruch kehrwert() {
 		long zaehler = 0;
@@ -189,10 +189,10 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode um Brüche zu kürzen
+	 * Methode um Brï¿½che zu kï¿½rzen
 	 * 
 	 * @param bruch
-	 * @return Der Bruch der gekürzt wurde.
+	 * @return Der Bruch der gekï¿½rzt wurde.
 	 */
 	Bruch kuerzen(Bruch bruch) {
 		long ggt = ggt(this.zaehler, this.nenner);
@@ -202,9 +202,9 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode zur Übrprüfung, ob der eingegebene Bruch ein echter Bruch ist
+	 * Methode zur ï¿½brprï¿½fung, ob der eingegebene Bruch ein echter Bruch ist
 	 * 
-	 * @return echter Bruch (ganzeZahl, zähler und nenner)
+	 * @return echter Bruch (ganzeZahl, zï¿½hler und nenner)
 	 */
 	Bruch echterBruch() {
 		long zaehler = 0;
@@ -224,7 +224,7 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode zur Überprufung, ob der eingegebene Bruch ein unechter Bruch ist
+	 * Methode zur ï¿½berprufung, ob der eingegebene Bruch ein unechter Bruch ist
 	 * 
 	 * @return unechter Bruch (zaehler und nenner)
 	 */
@@ -239,7 +239,7 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode um Brüche zu dividieren
+	 * Methode um Brï¿½che zu dividieren
 	 * 
 	 * @param bruch
 	 * @return Ergebnis der Divisioon
@@ -255,7 +255,7 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode um Brüche zu potenzieren
+	 * Methode um Brï¿½che zu potenzieren
 	 * 
 	 * @param potenz
 	 * @return Ergebnis der Potenzierung
@@ -267,13 +267,19 @@ public class Bruch {
 		zaehler = (long) (Math.pow(this.zaehler, potenz));
 		nenner = (long) Math.pow(this.nenner, potenz);
 
-		return new Bruch(zaehler, nenner).kuerzen(this);
+		if (new Bruch(ganzeZahl, zaehler, nenner).isEcht()) {
+			return new Bruch(ganzeZahl, zaehler, nenner).kuerzen(this);
+		} else {
+			return new Bruch(ganzeZahl, zaehler, nenner).echterBruch().kuerzen(
+					this);
+		}
+
 	}
 
 	/**
-	 * Methode zur Überprüfung, ob ein echter Bruch vorhanden ist
+	 * Methode zur ï¿½berprï¿½fung, ob ein echter Bruch vorhanden ist
 	 * 
-	 * @return gibt einen Boolean Wert zurück, ob der Bruch echt oder unecht ist
+	 * @return gibt einen Boolean Wert zurï¿½ck, ob der Bruch echt oder unecht ist
 	 */
 	protected boolean isEcht() {
 		if (this.zaehler > this.nenner) {
@@ -284,9 +290,9 @@ public class Bruch {
 	}
 
 	/**
-	 * Methode um Brüche in Dezimalzahlen umzuwandeln
+	 * Methode um Brï¿½che in Dezimalzahlen umzuwandeln
 	 * 
-	 * @return liefert den Bruch als Dezimalzahl zurück
+	 * @return liefert den Bruch als Dezimalzahl zurï¿½ck
 	 */
 	protected double getDezimalzahl() {
 		if (this.ganzeZahl == 0) {
